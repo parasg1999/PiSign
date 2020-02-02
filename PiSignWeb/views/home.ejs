@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: black;" class="container">
+
+    <main>
+        <center>
+        <div class="jumbotron" style="margin-top: 30vh;">
+            <img src=<%= imgsrc %> />
+            </div>
+        </center>
+    </main>
+    <script>
+        setInterval(() => {
+            $.getJSON('/checkIfLoggedIn',
+                {
+                    function() {
+                    }
+                })
+                .done(function () {
+                    window.location = "/loggedIn";
+                })
+                .fail(function () {
+                    console.log('NO')
+                })
+        }, 2000);
+    </script>
+</body>
+
+</html>
